@@ -130,6 +130,9 @@ public class Form extends Activity
   // event.
   private String nextFormName;
 
+  // Add by Skinner
+  AlertDialog aboutDialog;
+
   @Override
   public void onCreate(Bundle icicle) {
     // Called when the activity is first created
@@ -156,6 +159,11 @@ public class Form extends Activity
 
     // Add application components to the form
     $define();
+
+    // Add by Skinner
+    aboutDialog = new AlertDialog.Builder(this).create();
+    aboutDialog.setTitle("About");
+    aboutDialog.setMessage("Not implemented");
 
     // Special case for Event.Initialize(): all other initialize events are triggered after
     // completing the constructor. This doesn't work for Android apps though because this method
@@ -974,6 +982,8 @@ public class Form extends Activity
     // add the menu items
     // Comment out the next line if we don't want the exit button
     addExitButtonToMenu(menu);
+    // Add by Skinner
+    addAboutToMenu(menu);
     return true;
   }
 
@@ -1010,6 +1020,35 @@ public class Form extends Activity
       }
     });
     alertDialog.show();
+  }
+
+  // Add by Skinner
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "About")
+  @SimpleProperty
+  public void AboutDialogTitle(String title) {
+    aboutDialog.setTitle(title);
+  }
+
+  // Add by Skinner
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void AboutDialogMessage(String message) {
+    aboutDialog.setMessage(message);
+  }
+
+  // Add by Skinner
+  public void addAboutToMenu(Menu menu) {
+    MenuItem aboutApplicationItem = menu.add(Menu.NONE, Menu.NONE, Menu.FIRST + 1,
+    "About this application")
+    .setOnMenuItemClickListener(new OnMenuItemClickListener() {
+      public boolean onMenuItemClick(MenuItem item) {
+        aboutDialog.show();
+        return true;
+      }
+    });
+    aboutApplicationItem.setIcon(android.R.drawable.ic_menu_help);
   }
 
   // This is called from clear-current-form in runtime.scm.
