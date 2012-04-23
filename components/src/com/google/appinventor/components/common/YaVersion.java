@@ -471,4 +471,6 @@ public class YaVersion {
   // - The CanGoForward and CanGoBack methods were added
   public static final int WEBVIEWER_COMPONENT_VERSION = 2;
 
+  // Add by Skinner
+  public static final int SIMPLEMENU_COMPONENT_VERSION = 1;
 }

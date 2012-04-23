@@ -102,6 +102,8 @@ public final class SimpleComponentDescriptor {
     bundledImages.put("images/twitter.png", images.twitterComponent());
     bundledImages.put("images/voting.png", images.voting());
     bundledImages.put("images/web.png", images.web());
+    // Add by Skinner
+    bundledImages.put("images/menu.png", images.simplemenu());
     imagesInitialized = true;
   }
 

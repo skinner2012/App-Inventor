@@ -352,4 +352,8 @@ public interface Images extends Resources {
    */
   @Source("com/google/appinventor/images/web.png")
   ImageResource web();
+
+  // Add by Skinner
+  @Source("com/google/appinventor/images/menu.png")
+  ImageResource simplemenu();
 }
