@@ -19,6 +19,8 @@ public enum ComponentCategory{
   ARRANGEMENTS("Screen Arrangement"),
   LEGOMINDSTORMS("LEGO\u00AE MINDSTORMS\u00AE"),
   MISC("Other stuff"),
+  // Add by Skinner
+  MENU("Menu"),
   EXPERIMENTAL("Not ready for prime time"),
   OBSOLETE("Old stuff"),
   INTERNAL("For internal use only"),
@@ -37,6 +39,8 @@ public enum ComponentCategory{
     DOC_MAP.put("Screen Arrangement", "screenarrangement");
     DOC_MAP.put("LEGO\u00AE MINDSTORMS\u00AE", "legomindstorms");
     DOC_MAP.put("Other stuff", "other");
+    // Add by Skinner
+    DOC_MAP.put("Menu", "menu");
     DOC_MAP.put("Not ready for prime time", "notready");
   }
 
