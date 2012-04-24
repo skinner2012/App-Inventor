@@ -101,4 +101,27 @@ public interface Component {
   static final int DIRECTION_NONE = 0;
   static final int DIRECTION_MIN = -4;
   static final int DIRECTION_MAX = 4;
+
+  // Add by Skinner
+  /*
+   * Menu Icon constants.
+   */
+  static final int MENU_ICON_ACCOUNTLIST = 0;
+  static final int MENU_ICON_ADD = 1;
+  static final int MENU_ICON_AGENDA = 2;
+  static final int MENU_ICON_ARCHIVE = 3;
+  static final int MENU_ICON_ATTACHMENT = 4;
+  static final int MENU_ICON_CLOSECLEARCANCEL = 5;
+  static final int MENU_ICON_COMPOSE = 6;
+  static final int MENU_ICON_EDIT = 7;
+  static final int MENU_ICON_GALLERY = 8;
+  static final int MENU_ICON_HELP = 9;
+  static final int MENU_ICON_INFODETAILS = 10;
+  static final int MENU_ICON_MANAGE = 11;
+  static final int MENU_ICON_MORE = 12;
+  static final int MENU_ICON_NOTIFICATIONS = 13;
+  static final int MENU_ICON_PREFERENCES = 14;
+  static final int MENU_ICON_SEARCH = 15;
+  static final int MENU_ICON_STAR = 16;
+  static final int MENU_ICON_VIEW = 17;
 }

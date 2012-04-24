@@ -436,6 +436,80 @@ public interface OdeMessages extends Messages {
   @Description("Text for color choice 'Yellow'")
   String yellowColor();
 
+  // Add by Skinner
+  // Used in editor/youngandroid/properties/YoungAndroidMenuIconChoicePropertyEditor.java
+  @DefaultMessage("account list")
+  @Description("Icon for menu iconstyle choice 'account list '")
+  String accountlistMenuIcon();
+
+  @DefaultMessage("add")
+  @Description("Icon for menu iconstyle choice 'add '")
+  String addMenuIcon();
+
+  @DefaultMessage("agenda")
+  @Description("Icon for menu iconstyle choice 'agenda '")
+  String agendaMenuIcon();
+
+  @DefaultMessage("archive")
+  @Description("Icon for menu iconstyle choice 'archive '")
+  String archiveMenuIcon();
+
+  @DefaultMessage("attachment")
+  @Description("Icon for menu iconstyle choice 'attachment '")
+  String attachmentMenuIcon();
+
+  @DefaultMessage("close clear cancel")
+  @Description("Icon for menu iconstyle choice 'close clear cancel '")
+  String closeclearcancelMenuIcon();
+
+  @DefaultMessage("compose")
+  @Description("Icon for menu iconstyle choice 'compose '")
+  String composeMenuIcon();
+
+  @DefaultMessage("edit")
+  @Description("Icon for menu iconstyle choice 'edit '")
+  String editMenuIcon();
+
+  @DefaultMessage("gallery")
+  @Description("Icon for menu iconstyle choice 'gallery '")
+  String galleryMenuIcon();
+
+  @DefaultMessage("help")
+  @Description("Icon for menu iconstyle choice 'help '")
+  String helpMenuIcon();
+
+  @DefaultMessage("info details")
+  @Description("Icon for menu iconstyle choice 'info details '")
+  String infodetailsMenuIcon();
+
+  @DefaultMessage("manage")
+  @Description("Icon for menu iconstyle choice 'manage '")
+  String manageMenuIcon();
+
+  @DefaultMessage("more")
+  @Description("Icon for menu iconstyle choice 'more '")
+  String moreMenuIcon();
+
+  @DefaultMessage("notifications")
+  @Description("Icon for menu iconstyle choice 'notifications '")
+  String notificationsMenuIcon();
+
+  @DefaultMessage("preferences")
+  @Description("Icon for menu iconstyle choice 'preferences '")
+  String preferencesMenuIcon();
+
+  @DefaultMessage("search")
+  @Description("Icon for menu iconstyle choice 'search '")
+  String searchMenuIcon();
+
+  @DefaultMessage("star")
+  @Description("Icon for menu iconstyle choice 'star '")
+  String starMenuIcon();
+
+  @DefaultMessage("view")
+  @Description("Icon for menu iconstyle choice 'view '")
+  String viewMenuIcon();
+
   // Used in editor/youngandroid/properties/YoungAndroidFontTypefaceChoicePropertyEditor.java
 
   @DefaultMessage("default")

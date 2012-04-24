@@ -18,6 +18,8 @@ import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroid
 import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidFontTypefaceChoicePropertyEditor;
 import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidLegoNxtSensorPortChoicePropertyEditor;
 import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidScreenOrientationChoicePropertyEditor;
+// Add by Skinner
+import com.google.appinventor.client.editor.youngandroid.properties.YoungAndroidMenuIconChoicePropertyEditor;
 import com.google.appinventor.client.widgets.properties.FloatPropertyEditor;
 import com.google.appinventor.client.widgets.properties.IntegerPropertyEditor;
 import com.google.appinventor.client.widgets.properties.NonNegativeFloatPropertyEditor;
@@ -169,6 +171,9 @@ public class YoungAndroidPalettePanel extends Composite implements SimplePalette
       return new YoungAndroidAlignmentChoicePropertyEditor();
     } else if (editorType.equals("typeface")) {
       return new YoungAndroidFontTypefaceChoicePropertyEditor();
+    // Add by Skinner
+    } else if (editorType.equals("menuicon")) {
+      return new YoungAndroidMenuIconChoicePropertyEditor();
     } else {
       return new TextPropertyEditor();
     }

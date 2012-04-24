@@ -37,6 +37,8 @@ public @interface DesignerProperty {
   static final String PROPERTY_TYPE_TEXT = "text";
   static final String PROPERTY_TYPE_TEXTALIGNMENT = "textalignment";
   static final String PROPERTY_TYPE_TYPEFACE = "typeface";
+  // Add by Skinner
+  static final String PROPERTY_TYPE_MENUICON = "menuicon";
 
   /**
    * Determines the property editor used in the designer.
