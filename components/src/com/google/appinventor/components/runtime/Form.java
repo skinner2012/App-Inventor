@@ -131,7 +131,8 @@ public class Form extends Activity
   private String nextFormName;
 
   // Add by Skinner
-  AlertDialog aboutDialog;
+  private AlertDialog aboutDialog;
+  private static Menu menu;
 
   @Override
   public void onCreate(Bundle icicle) {
@@ -982,9 +983,24 @@ public class Form extends Activity
     // add the menu items
     // Comment out the next line if we don't want the exit button
     addExitButtonToMenu(menu);
+
     // Add by Skinner
     addAboutToMenu(menu);
+    this.menu = menu;
+
     return true;
+  }
+
+  // Add by Skinner
+  public MenuItem onFormCreateMenu() {
+    MenuItem menuItem = menu.add("Menu Item");
+    menuItem.setIcon(android.R.drawable.ic_menu_help);
+    return menuItem;
+  }
+
+  // Add by Skinner
+  public void onFormRemoveMenu(int item) {
+    menu.removeItem(item);
   }
 
   public void addExitButtonToMenu(Menu menu) {

@@ -438,10 +438,6 @@ public interface OdeMessages extends Messages {
 
   // Add by Skinner
   // Used in editor/youngandroid/properties/YoungAndroidMenuIconChoicePropertyEditor.java
-  @DefaultMessage("account list")
-  @Description("Icon for menu iconstyle choice 'account list '")
-  String accountlistMenuIcon();
-
   @DefaultMessage("add")
   @Description("Icon for menu iconstyle choice 'add '")
   String addMenuIcon();
@@ -450,21 +446,9 @@ public interface OdeMessages extends Messages {
   @Description("Icon for menu iconstyle choice 'agenda '")
   String agendaMenuIcon();
 
-  @DefaultMessage("archive")
-  @Description("Icon for menu iconstyle choice 'archive '")
-  String archiveMenuIcon();
-
-  @DefaultMessage("attachment")
-  @Description("Icon for menu iconstyle choice 'attachment '")
-  String attachmentMenuIcon();
-
   @DefaultMessage("close clear cancel")
   @Description("Icon for menu iconstyle choice 'close clear cancel '")
   String closeclearcancelMenuIcon();
-
-  @DefaultMessage("compose")
-  @Description("Icon for menu iconstyle choice 'compose '")
-  String composeMenuIcon();
 
   @DefaultMessage("edit")
   @Description("Icon for menu iconstyle choice 'edit '")
@@ -490,10 +474,6 @@ public interface OdeMessages extends Messages {
   @Description("Icon for menu iconstyle choice 'more '")
   String moreMenuIcon();
 
-  @DefaultMessage("notifications")
-  @Description("Icon for menu iconstyle choice 'notifications '")
-  String notificationsMenuIcon();
-
   @DefaultMessage("preferences")
   @Description("Icon for menu iconstyle choice 'preferences '")
   String preferencesMenuIcon();
@@ -501,10 +481,6 @@ public interface OdeMessages extends Messages {
   @DefaultMessage("search")
   @Description("Icon for menu iconstyle choice 'search '")
   String searchMenuIcon();
-
-  @DefaultMessage("star")
-  @Description("Icon for menu iconstyle choice 'star '")
-  String starMenuIcon();
 
   @DefaultMessage("view")
   @Description("Icon for menu iconstyle choice 'view '")
