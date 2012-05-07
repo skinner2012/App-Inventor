@@ -472,5 +472,5 @@ public class YaVersion {
   public static final int WEBVIEWER_COMPONENT_VERSION = 2;
 
   // Add by Skinner
-  public static final int SIMPLEMENU_COMPONENT_VERSION = 1;
+  public static final int MENUITEMS_COMPONENT_VERSION = 1;
 }
