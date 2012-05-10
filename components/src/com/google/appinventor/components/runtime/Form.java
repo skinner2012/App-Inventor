@@ -117,6 +117,9 @@ public class Form extends Activity
   private final Set<OnResumeListener> onResumeListeners = Sets.newHashSet();
   private final Set<OnPauseListener> onPauseListeners = Sets.newHashSet();
   private final Set<OnDestroyListener> onDestroyListeners = Sets.newHashSet();
+  // Add by Skinner
+  private final Set<OnCreateOptionsMenuListener> onCreateOptionsMenuListeners = Sets.newHashSet();
+  private final Set<OnPrepareOptionsMenuListener> onPrepareOptionsMenuListeners = Sets.newHashSet();
 
   // Set to the optional String-valued Extra passed in via an Intent on startup.
   private String startupValue = "";
@@ -131,8 +134,13 @@ public class Form extends Activity
   private String nextFormName;
 
   // Add by Skinner
+  private Menu menu;
+  private static int menuItemNum = 1;
+  /*
   private AlertDialog aboutDialog;
-  private static Menu menu;
+  private String aboutTitle = "About";
+  private String aboutMsg = "Not Implemented";
+   */
 
   @Override
   public void onCreate(Bundle icicle) {
@@ -161,10 +169,12 @@ public class Form extends Activity
     // Add application components to the form
     $define();
 
+    /*
     // Add by Skinner
     aboutDialog = new AlertDialog.Builder(this).create();
-    aboutDialog.setTitle("About");
-    aboutDialog.setMessage("Not implemented");
+    aboutDialog.setTitle(aboutTitle);
+    aboutDialog.setMessage(aboutMsg);
+    */
 
     // Special case for Event.Initialize(): all other initialize events are triggered after
     // completing the constructor. This doesn't work for Android apps though because this method
@@ -985,26 +995,55 @@ public class Form extends Activity
     addExitButtonToMenu(menu);
 
     // Add by Skinner
-    addAboutToMenu(menu);
+    // addAboutToMenu(menu);
+
+    // Add by Skinner
     this.menu = menu;
+
+    // Add by Skinner
+    for (OnCreateOptionsMenuListener onCreateOptionsMenuListener : onCreateOptionsMenuListeners) {
+      onCreateOptionsMenuListener.onCreateOptionsMenu(menu);
+    }
 
     return true;
   }
 
   // Add by Skinner
-  public MenuItem onFormCreateMenu() {
-    MenuItem menuItem = menu.add("Menu Item");
-    menuItem.setIcon(android.R.drawable.ic_menu_help);
-    return menuItem;
+  public void registerForOnCreateOptionsMenu(OnCreateOptionsMenuListener component) {
+    onCreateOptionsMenuListeners.add(component);
   }
 
   // Add by Skinner
-  public void onFormRemoveMenu(int item) {
-    menu.removeItem(item);
+  @Override
+  public boolean onPrepareOptionsMenu(Menu menu) {
+    menu.clear();
+    menuItemNum = 1;
+
+    super.onPrepareOptionsMenu(menu);
+    addExitButtonToMenu(menu);
+    // addAboutToMenu(menu);
+
+    for (OnPrepareOptionsMenuListener onPrepareOptionsMenuListener : onPrepareOptionsMenuListeners) {
+      onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
+    }
+
+    return true;
+  }
+
+  // Add by Skinner
+  public void registerForOnPrepareOptionsMenu(OnPrepareOptionsMenuListener component) {
+    onPrepareOptionsMenuListeners.add(component);
+  }
+
+  // Add by Skinner
+  public int getUserMenuNumofArray() {
+    int num = menuItemNum;
+    menuItemNum ++; 
+    return num;
   }
 
   public void addExitButtonToMenu(Menu menu) {
-    MenuItem stopApplicationItem = menu.add(Menu.NONE, Menu.NONE, Menu.FIRST,
+    MenuItem stopApplicationItem = menu.add(Menu.NONE, 1 /*Menu.NONE*/, Menu.NONE /*Menu.FIRST*/,
     "Stop this application")
     .setOnMenuItemClickListener(new OnMenuItemClickListener() {
       public boolean onMenuItemClick(MenuItem item) {
@@ -1038,12 +1077,14 @@ public class Form extends Activity
     alertDialog.show();
   }
 
+  /*
   // Add by Skinner
   @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
     defaultValue = "About")
   @SimpleProperty
   public void AboutDialogTitle(String title) {
-    aboutDialog.setTitle(title);
+    aboutTitle = title;
+    // aboutDialog.setTitle(title);
   }
 
   // Add by Skinner
@@ -1051,12 +1092,13 @@ public class Form extends Activity
     defaultValue = "")
   @SimpleProperty
   public void AboutDialogMessage(String message) {
-    aboutDialog.setMessage(message);
+    aboutMsg = message;
+    // aboutDialog.setMessage(message);
   }
 
   // Add by Skinner
   public void addAboutToMenu(Menu menu) {
-    MenuItem aboutApplicationItem = menu.add(Menu.NONE, Menu.NONE, Menu.FIRST + 1,
+    MenuItem aboutApplicationItem = menu.add(Menu.NONE, 2, Menu.NONE,
     "About this application")
     .setOnMenuItemClickListener(new OnMenuItemClickListener() {
       public boolean onMenuItemClick(MenuItem item) {
@@ -1066,6 +1108,7 @@ public class Form extends Activity
     });
     aboutApplicationItem.setIcon(android.R.drawable.ic_menu_help);
   }
+  */
 
   // This is called from clear-current-form in runtime.scm.
   public void clear() {
