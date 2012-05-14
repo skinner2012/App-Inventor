@@ -23,9 +23,42 @@ import android.content.Intent;
     nonVisible = true,
     iconName = "images/edittextprefs.png")
 @SimpleObject
-public class EditTextPrefs extends AndroidNonvisibleComponent implements Component {
+public class EditTextPrefs extends AndroidNonvisibleComponent implements Component, Deleteable {
   public EditTextPrefs(ComponentContainer container) {
     super(container.$form());
     final Context context = (Context) container.$context();
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetEditTextPrefsDialogTitle(String dialog_title) {
+
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetEditTextPrefsKey(String key) {
+
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetEditTextPrefsTitle(String title) {
+
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetEditTextPrefsSummary(String summary) {
+
+  }
+
+  @Override
+  public void onDelete() {
+
   }
 }

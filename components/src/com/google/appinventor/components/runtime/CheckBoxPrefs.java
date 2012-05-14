@@ -23,9 +23,35 @@ import android.content.Intent;
     nonVisible = true,
     iconName = "images/checkboxprefs.png")
 @SimpleObject
-public class CheckBoxPrefs extends AndroidNonvisibleComponent implements Component {
+public class CheckBoxPrefs extends AndroidNonvisibleComponent implements Component, Deleteable {
   public CheckBoxPrefs(ComponentContainer container) {
     super(container.$form());
     final Context context = (Context) container.$context();
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetCheckBoxPrefsKey(String key) {
+
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetCheckBoxPrefsTitle(String title) {
+
+  }
+
+  @DesignerProperty(editorType = DesignerProperty.PROPERTY_TYPE_STRING,
+    defaultValue = "")
+  @SimpleProperty
+  public void SetCheckBoxPrefsSummary(String summary) {
+
+  }
+
+  @Override
+  public void onDelete() {
+
   }
 }
