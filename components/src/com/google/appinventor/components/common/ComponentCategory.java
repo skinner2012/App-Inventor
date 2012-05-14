@@ -21,6 +21,7 @@ public enum ComponentCategory{
   MISC("Other stuff"),
   // Add by Skinner
   MENU("Menu"),
+  PREFERENCE("Preference"),
   EXPERIMENTAL("Not ready for prime time"),
   OBSOLETE("Old stuff"),
   INTERNAL("For internal use only"),
@@ -41,6 +42,7 @@ public enum ComponentCategory{
     DOC_MAP.put("Other stuff", "other");
     // Add by Skinner
     DOC_MAP.put("Menu", "menu");
+    DOC_MAP.put("Preference", "preference");
     DOC_MAP.put("Not ready for prime time", "notready");
   }
 

@@ -103,7 +103,10 @@ public final class SimpleComponentDescriptor {
     bundledImages.put("images/voting.png", images.voting());
     bundledImages.put("images/web.png", images.web());
     // Add by Skinner
-    bundledImages.put("images/menu.png", images.simplemenu());
+    bundledImages.put("images/menu.png", images.menuitems());
+    bundledImages.put("images/edittextprefs.png", images.edittextprefs());
+    bundledImages.put("images/checkboxprefs.png", images.checkboxprefs());
+    bundledImages.put("images/listprefs.png", images.listprefs());
     imagesInitialized = true;
   }
 

@@ -355,5 +355,15 @@ public interface Images extends Resources {
 
   // Add by Skinner
   @Source("com/google/appinventor/images/menu.png")
-  ImageResource simplemenu();
+  ImageResource menuitems();
+
+  // Add by Skinner
+  @Source("com/google/appinventor/images/edittextprefs.png")
+  ImageResource edittextprefs();
+
+  @Source("com/google/appinventor/images/checkboxprefs.png")
+  ImageResource checkboxprefs();
+
+  @Source("com/google/appinventor/images/listprefs.png")
+  ImageResource listprefs();
 }
