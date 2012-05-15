@@ -54,6 +54,10 @@ public final class Compiler {
   private static final String WEBVIEW_ACTIVITY_CLASS =
       "com.google.appinventor.components.runtime.WebViewActivity";
 
+  // Add by Skinner
+  private static final String PREFS_ACTIVITY_CLASS = 
+      "com.google.appinventor.components.runtime.PrefsActivity";
+
   public static final String RUNTIME_FILES_DIR = "/files/";
 
   private static final String DEFAULT_ICON =
@@ -242,6 +246,9 @@ public final class Compiler {
       out.write("        <action android:name=\"android.intent.action.MAIN\" />\n");
       out.write("      </intent-filter>\n");
       out.write("    </activity>\n");
+
+      // Add by Skinner
+      out.write("    <activity android:name=\"" + PREFS_ACTIVITY_CLASS + "\"></activity>\n");
 
       out.write("  </application>\n");
       out.write("</manifest>\n");

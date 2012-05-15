@@ -29,6 +29,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+// Add by Skinner
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -142,6 +145,9 @@ public class Form extends Activity
   private String aboutMsg = "Not Implemented";
    */
 
+  // Add by Skinner
+  private SharedPreferences prefs;
+
   @Override
   public void onCreate(Bundle icicle) {
     // Called when the activity is first created
@@ -175,6 +181,9 @@ public class Form extends Activity
     aboutDialog.setTitle(aboutTitle);
     aboutDialog.setMessage(aboutMsg);
     */
+
+    // Add by Skinner
+    prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
     // Special case for Event.Initialize(): all other initialize events are triggered after
     // completing the constructor. This doesn't work for Android apps though because this method
@@ -998,6 +1007,9 @@ public class Form extends Activity
     // addAboutToMenu(menu);
 
     // Add by Skinner
+    addPrefsToMenu(menu);
+
+    // Add by Skinner
     this.menu = menu;
 
     // Add by Skinner
@@ -1022,6 +1034,7 @@ public class Form extends Activity
     super.onPrepareOptionsMenu(menu);
     addExitButtonToMenu(menu);
     // addAboutToMenu(menu);
+    addPrefsToMenu(menu);
 
     for (OnPrepareOptionsMenuListener onPrepareOptionsMenuListener : onPrepareOptionsMenuListeners) {
       onPrepareOptionsMenuListener.onPrepareOptionsMenu(menu);
@@ -1109,6 +1122,19 @@ public class Form extends Activity
     aboutApplicationItem.setIcon(android.R.drawable.ic_menu_help);
   }
   */
+
+  // Add by Skinner
+  public void addPrefsToMenu(Menu menu) {
+    MenuItem preferencesItem = menu.add(Menu.NONE, 2, Menu.NONE,
+    "Preferences")
+    .setOnMenuItemClickListener(new OnMenuItemClickListener() {
+      public boolean onMenuItemClick(MenuItem item) {
+        startActivity(new Intent(Form.this, PrefsActivity.class));
+        return true;
+      }
+    });
+    preferencesItem.setIcon(android.R.drawable.ic_menu_preferences);
+  }
 
   // This is called from clear-current-form in runtime.scm.
   public void clear() {
