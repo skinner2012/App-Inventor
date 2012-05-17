@@ -35,7 +35,7 @@ import java.io.IOException;
     nonVisible = true,
     iconName = "images/menu.png")
 @SimpleObject
-public class MenuItems extends AndroidNonvisibleComponent 
+public final class MenuItems extends AndroidNonvisibleComponent 
     implements Component, OnCreateOptionsMenuListener, OnPrepareOptionsMenuListener, OnMenuItemClickListener, Deleteable {
 
   private static final String LOG_TAG = "MenuItems";
@@ -51,10 +51,9 @@ public class MenuItems extends AndroidNonvisibleComponent
     super(container.$form());
     form.registerForOnCreateOptionsMenu(this);
     form.registerForOnPrepareOptionsMenu(this);
-    final Context context = (Context) container.$context();
 
     menuIndex = form.getUserMenuNumofArray() + 1;
-    defaultMenuTitle = "Menu Item " + (menuIndex - 1);
+    defaultMenuTitle = "Menu Item " + (menuIndex - 2);
     defaultMenuIcon = android.R.drawable.ic_menu_help;
     useUploadedIcon = false;
     iconPath = "";
@@ -196,7 +195,6 @@ public class MenuItems extends AndroidNonvisibleComponent
 
   @Override
   public void onDelete() {
-    // form.removeUserMenuItems(menuIndex);
   }
 }
 

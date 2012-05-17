@@ -475,6 +475,8 @@ public class YaVersion {
   public static final int MENUITEMS_COMPONENT_VERSION = 1;
 
   // Add by Skinner
+  public static final int PREFERENCE_COMPONENT_VERSION = 1;
+
   public static final int EDITTEXTPREFS_COMPONENT_VERSION = 1;
 
   public static final int CHECKBOXPREFS_COMPONENT_VERSION = 1;

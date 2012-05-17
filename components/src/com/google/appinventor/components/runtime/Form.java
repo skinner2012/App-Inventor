@@ -138,7 +138,7 @@ public class Form extends Activity
 
   // Add by Skinner
   private Menu menu;
-  private static int menuItemNum = 1;
+  private static int menuItemNum = 2;
   /*
   private AlertDialog aboutDialog;
   private String aboutTitle = "About";
